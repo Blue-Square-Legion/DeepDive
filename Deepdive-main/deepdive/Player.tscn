@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://5lk23blbkby2"]
+
+[ext_resource type="Texture2D" uid="uid://ddeex8otincej" path="res://testing/testing_assets/WhiteSquare.png" id="1_rjpg7"]
+[ext_resource type="Script" path="res://player.gd" id="1_wshfi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhdff"]
+radius = 5.5509
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl4tq"]
+atlas = ExtResource("1_rjpg7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1707p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl4tq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlayerArea2D" type="CharacterBody2D"]
+z_index = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_wshfi")
+
+[node name="PlayerAreaCollisionShape" type="CollisionShape2D" parent="."]
+z_as_relative = false
+position = Vector2(0.5, -0.25)
+shape = SubResource("CircleShape2D_xhdff")
+
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-4.76837e-07, -9.25)
+scale = Vector2(0.367188, 0.492188)
+sprite_frames = SubResource("SpriteFrames_1707p")
