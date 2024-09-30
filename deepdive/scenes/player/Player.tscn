@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://5lk23blbkby2"]
+[gd_scene load_steps=7 format=3 uid="uid://5lk23blbkby2"]
 
-[ext_resource type="Texture2D" uid="uid://ddeex8otincej" path="res://assets/player/WhiteSquare.png" id="1_rjpg7"]
+[ext_resource type="Texture2D" uid="uid://ddeex8otincej" path="res://Assets/player/WhiteSquare.png" id="1_rjpg7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wshfi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhdff"]
@@ -21,6 +21,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_huovk"]
+radius = 88.2043
+
 [node name="PlayerArea2D" type="CharacterBody2D"]
 z_index = 1
 floor_stop_on_slope = false
@@ -37,3 +40,10 @@ z_index = 1
 position = Vector2(-4.76837e-07, -9.25)
 scale = Vector2(0.367188, 0.492188)
 sprite_frames = SubResource("SpriteFrames_1707p")
+
+[node name="Sonar" type="Area2D" parent="."]
+
+[node name="SonarCollider" type="CollisionShape2D" parent="Sonar"]
+shape = SubResource("CircleShape2D_huovk")
+
+[connection signal="area_entered" from="Sonar" to="." method="_on_sonar_area_entered"]

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 var speed := 120.0
 # Called when the node enters the scene tree for the first time.
@@ -13,3 +13,8 @@ func _process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	move_and_slide()
+
+
+func _on_sonar_area_entered(area: Area2D) -> void:
+	if area is Part:
+		print("works!")
