@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://fxw5f4muu4w8"]
+[gd_scene load_steps=13 format=4 uid="uid://fxw5f4muu4w8"]
 
 [ext_resource type="Script" path="res://scripts/isometric_2d.gd" id="1_fuxcp"]
 [ext_resource type="Texture2D" uid="uid://dvwu6qqoab25b" path="res://Assets/visual assets/tiles/isometric_tileset32x32.png" id="2_qn7i6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xuxgy2mcctr" path="res://scenes/under_water.tscn" id="5_xuq8d"]
 [ext_resource type="PackedScene" uid="uid://s4n7dq8pawxj" path="res://scenes/part_1.tscn" id="6_cyvtr"]
 [ext_resource type="PackedScene" uid="uid://x6mp1lj2whnj" path="res://scenes/part_2.tscn" id="6_s512a"]
+[ext_resource type="PackedScene" uid="uid://behwijwoeq8m" path="res://scenes/ui.tscn" id="7_dqsqw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtpmw"]
 texture = ExtResource("2_qn7i6")
@@ -954,3 +955,9 @@ position = Vector2(450, 431)
 
 [node name="Part2" parent="." instance=ExtResource("6_s512a")]
 position = Vector2(510, 465)
+
+[node name="UI" parent="." instance=ExtResource("7_dqsqw")]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
