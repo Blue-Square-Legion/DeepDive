@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5lk23blbkby2"]
+[gd_scene load_steps=8 format=3 uid="uid://5lk23blbkby2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wshfi"]
 [ext_resource type="Texture2D" uid="uid://cllgv3mxplysy" path="res://placeholder.png" id="2_k3kjn"]
@@ -21,6 +21,9 @@ radius = 5.5509
 [sub_resource type="CircleShape2D" id="CircleShape2D_huovk"]
 radius = 88.2043
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1cpqf"]
+radius = 26.0192
+
 [node name="HolyDiver" type="CharacterBody2D"]
 z_index = 1
 floor_stop_on_slope = false
@@ -34,6 +37,7 @@ scale = Vector2(0.225261, 0.301945)
 sprite_frames = SubResource("SpriteFrames_1707p")
 
 [node name="PlayerAreaCollisionShape" type="CollisionShape2D" parent="."]
+visible = false
 z_index = 2
 z_as_relative = false
 position = Vector2(0.5, -0.25)
@@ -48,10 +52,19 @@ scale = Vector2(1.78711, 1.78711)
 texture = ExtResource("3_i5625")
 
 [node name="Sonar" type="Area2D" parent="."]
+visible = false
+monitorable = false
 
 [node name="SonarCollider" type="CollisionShape2D" parent="Sonar"]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_huovk")
 
+[node name="part_detection" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part_detection"]
+shape = SubResource("CircleShape2D_1cpqf")
+
 [connection signal="area_entered" from="Sonar" to="." method="_on_sonar_area_entered"]
 [connection signal="area_exited" from="Sonar" to="." method="_on_sonar_area_exited"]
+[connection signal="area_entered" from="part_detection" to="." method="_on_part_detection_area_entered"]
