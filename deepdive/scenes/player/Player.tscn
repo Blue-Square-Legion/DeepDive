@@ -1,39 +1,57 @@
-[gd_scene load_steps=6 format=3 uid="uid://5lk23blbkby2"]
+[gd_scene load_steps=7 format=3 uid="uid://5lk23blbkby2"]
 
-[ext_resource type="Texture2D" uid="uid://ddeex8otincej" path="res://assets/player/WhiteSquare.png" id="1_rjpg7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wshfi"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xhdff"]
-radius = 5.5509
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xl4tq"]
-atlas = ExtResource("1_rjpg7")
-region = Rect2(0, 0, 64, 64)
+[ext_resource type="Texture2D" uid="uid://cllgv3mxplysy" path="res://placeholder.png" id="2_k3kjn"]
+[ext_resource type="Texture2D" uid="uid://ba0rdput6dvcx" path="res://Assets/sonar_placeholder.png" id="3_i5625"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1707p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xl4tq")
+"texture": ExtResource("2_k3kjn")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="PlayerArea2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhdff"]
+radius = 5.5509
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huovk"]
+radius = 88.2043
+
+[node name="HolyDiver" type="CharacterBody2D"]
 z_index = 1
 floor_stop_on_slope = false
 floor_block_on_wall = false
 script = ExtResource("1_wshfi")
 
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(1, -23)
+scale = Vector2(0.225261, 0.301945)
+sprite_frames = SubResource("SpriteFrames_1707p")
+
 [node name="PlayerAreaCollisionShape" type="CollisionShape2D" parent="."]
+z_index = 2
 z_as_relative = false
 position = Vector2(0.5, -0.25)
 shape = SubResource("CircleShape2D_xhdff")
 
-[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(-4.76837e-07, -9.25)
-scale = Vector2(0.367188, 0.492188)
-sprite_frames = SubResource("SpriteFrames_1707p")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.470588)
+self_modulate = Color(1, 1, 1, 0.368627)
+position = Vector2(-1.37501, -10.625)
+scale = Vector2(1.78711, 1.78711)
+texture = ExtResource("3_i5625")
+
+[node name="Sonar" type="Area2D" parent="."]
+
+[node name="SonarCollider" type="CollisionShape2D" parent="Sonar"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_huovk")
+
+[connection signal="area_entered" from="Sonar" to="." method="_on_sonar_area_entered"]
+[connection signal="area_exited" from="Sonar" to="." method="_on_sonar_area_exited"]

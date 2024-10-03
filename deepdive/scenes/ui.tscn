@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://behwijwoeq8m"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_q1mft"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1j5l7"]
+font_size = 48
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 756.0
+offset_top = 62.0
+offset_right = 1068.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time left: 199"
+label_settings = SubResource("LabelSettings_1j5l7")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_q1mft")
+
+[node name="GameTimer" type="Timer" parent="Timer"]
+wait_time = 30.0
+one_shot = true
