@@ -31,7 +31,7 @@ vertical_alignment = 1
 script = ExtResource("1_q1mft")
 
 [node name="GameTimer" type="Timer" parent="Timer"]
-wait_time = 30.0
+wait_time = 120.0
 one_shot = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
