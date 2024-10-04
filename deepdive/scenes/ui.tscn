@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://behwijwoeq8m"]
+[gd_scene load_steps=4 format=3 uid="uid://behwijwoeq8m"]
 
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_as0kd"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="1_q1mft"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1j5l7"]
@@ -8,6 +9,7 @@ font_size = 48
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_as0kd")
 
 [node name="Timer" type="Label" parent="."]
 layout_mode = 1
@@ -29,5 +31,12 @@ vertical_alignment = 1
 script = ExtResource("1_q1mft")
 
 [node name="GameTimer" type="Timer" parent="Timer"]
-wait_time = 30.0
+wait_time = 120.0
 one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 48.0
+offset_top = 31.0
+offset_right = 167.0
+offset_bottom = 150.0
