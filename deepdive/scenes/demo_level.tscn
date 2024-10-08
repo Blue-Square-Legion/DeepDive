@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=4 uid="uid://ddgfy43yc4i0o"]
+
+[ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_v0ry1"]
+[ext_resource type="Texture2D" uid="uid://dbg11ock57bjx" path="res://Assets/visual assets/tiles/isometric3x3.256.png" id="2_ygvrd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l0u2k"]
+texture = ExtResource("2_ygvrd")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -53)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -53)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -75, -128, 0, 0, 75, 128, 0)
+
+[sub_resource type="TileSet" id="TileSet_rjrvt"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 150)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Sand"
+terrain_set_0/terrain_0/color = Color(0.752617, 0.556278, 0.440191, 1)
+sources/0 = SubResource("TileSetAtlasSource_l0u2k")
+
+[node name="DemoLevel" type="Node2D"]
+script = ExtResource("1_v0ry1")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAGAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAABAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_rjrvt")
