@@ -2,6 +2,8 @@ class_name Player extends CharacterBody2D
 
 var picked_up_part: PackedScene = null
 var is_holding_part: bool = false
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 signal set_part_texture(part: Area2D)
 signal set_drop_part
@@ -73,12 +75,12 @@ func handle_part_pickup():
 var active_areas = []
 
 func trigger_sonar():
-	$Sprite2D.visible = not $Sprite2D.visible
-	await get_tree().create_timer(0.2).timeout
-	$Sprite2D.visible = not $Sprite2D.visible
+	#$Sprite2D.visible = not $Sprite2D.visible
+	#await get_tree().create_timer(0.2).timeout
+	#$Sprite2D.visible = not $Sprite2D.visible
+	animation_player.play("sonar_animation")
 	for part in active_areas:
 		part.sonar_glow()
-
 func _on_sonar_area_entered(area: Area2D) -> void:
 	if area is Area2D:
 		active_areas.push_back(area)
