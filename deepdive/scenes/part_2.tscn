@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://x6mp1lj2whnj"]
+
+[ext_resource type="Script" path="res://scripts/part_2.gd" id="1_o82sb"]
+[ext_resource type="Shader" path="res://shaders/part_outline.gdshader" id="2_5fw78"]
+[ext_resource type="Texture2D" uid="uid://dknmre30vy8l7" path="res://Assets/part_test.png" id="3_48d5n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g18ry"]
+shader = ExtResource("2_5fw78")
+shader_parameter/toggle_outline = false
+shader_parameter/toggle_alpha = true
+shader_parameter/line_width = 10.0
+shader_parameter/outline_color = Vector4(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7x0u"]
+radius = 15.0
+
+[node name="Part2" type="Area2D"]
+script = ExtResource("1_o82sb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_g18ry")
+scale = Vector2(0.255859, 0.255859)
+texture = ExtResource("3_48d5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m7x0u")
