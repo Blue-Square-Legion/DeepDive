@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpbvrv5p8nr5e"]
+[gd_scene load_steps=2 format=3 uid="uid://fci38di24c62"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_mided"]
 
@@ -61,8 +61,8 @@ visible = false
 layout_mode = 0
 offset_left = 3.0
 offset_top = -3.0
-offset_right = 1155.0
-offset_bottom = 650.0
+offset_right = 1905.0
+offset_bottom = 1076.0
 color = Color(0.160784, 0.160784, 0.160784, 0.407843)
 metadata/_edit_group_ = true
 
@@ -79,6 +79,7 @@ offset_right = 395.0
 offset_bottom = 174.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 36
 text = "Thank you for playing Deep Dive!
 
 Producer: @Ahmad P, @Leonnorius Hyperion
@@ -93,10 +94,10 @@ Sound Design: @catbot
 
 [node name="creditsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 997.0
-offset_top = 572.0
-offset_right = 1129.0
-offset_bottom = 622.0
+offset_left = 1649.0
+offset_top = 953.0
+offset_right = 1781.0
+offset_bottom = 1003.0
 text = "Credits"
 
 [connection signal="pressed" from="mainMenuButtons/startButton" to="." method="_on_start_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddgfy43yc4i0o"]
+[gd_scene load_steps=5 format=4 uid="uid://dv2y0o4no1ikr"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_v0ry1"]
 [ext_resource type="Texture2D" uid="uid://dbg11ock57bjx" path="res://Assets/visual assets/tiles/isometric3x3.256.png" id="2_ygvrd"]
