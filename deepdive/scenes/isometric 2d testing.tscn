@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://fxw5f4muu4w8"]
+[gd_scene load_steps=15 format=4 uid="uid://fxw5f4muu4w8"]
 
 [ext_resource type="Script" path="res://scripts/isometric_2d.gd" id="1_fuxcp"]
 [ext_resource type="Texture2D" uid="uid://dvwu6qqoab25b" path="res://Assets/visual assets/tiles/isometric_tileset32x32.png" id="2_qn7i6"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://s4n7dq8pawxj" path="res://scenes/part_1.tscn" id="6_cyvtr"]
 [ext_resource type="PackedScene" uid="uid://x6mp1lj2whnj" path="res://scenes/part_2.tscn" id="6_s512a"]
 [ext_resource type="PackedScene" uid="uid://behwijwoeq8m" path="res://scenes/ui.tscn" id="7_dqsqw"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="8_gjydd"]
+[ext_resource type="PackedScene" path="res://scenes/cart.tscn" id="9_q8btu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtpmw"]
 texture = ExtResource("2_qn7i6")
@@ -961,3 +963,14 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 4.0
 offset_bottom = 4.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_gjydd")]
+visible = false
+offset_left = 80.0
+offset_top = 432.0
+offset_right = 80.0
+offset_bottom = 432.0
+scale = Vector2(2, 2)
+
+[node name="Cart" parent="." instance=ExtResource("9_q8btu")]
+position = Vector2(309, 172)

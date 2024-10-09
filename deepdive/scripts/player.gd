@@ -81,7 +81,8 @@ func trigger_sonar():
 
 func _on_sonar_area_entered(area: Area2D) -> void:
 	if area is Area2D:
-		active_areas.push_back(area)
+		if area.is_in_group("part"):
+			active_areas.push_back(area)
 
 func _on_sonar_area_exited(area: Area2D) -> void:
 	if area is Area2D:

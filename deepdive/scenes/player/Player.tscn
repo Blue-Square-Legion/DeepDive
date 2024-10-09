@@ -24,7 +24,7 @@ radius = 88.2043
 [sub_resource type="CircleShape2D" id="CircleShape2D_1cpqf"]
 radius = 26.0192
 
-[node name="HolyDiver" type="CharacterBody2D"]
+[node name="HolyDiver" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 floor_stop_on_slope = false
 floor_block_on_wall = false
