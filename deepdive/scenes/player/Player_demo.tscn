@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddkw2j7uy3lsu"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_13w51"]
+[ext_resource type="Texture2D" uid="uid://cllgv3mxplysy" path="res://placeholder.png" id="2_oq6ra"]
+[ext_resource type="Texture2D" uid="uid://ba0rdput6dvcx" path="res://Assets/sonar_placeholder.png" id="3_3mwre"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1707p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oq6ra")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhdff"]
+radius = 28.5011
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huovk"]
+radius = 171.012
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1cpqf"]
+radius = 65.0692
+
+[node name="HolyDiver" type="CharacterBody2D"]
+z_index = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_13w51")
+
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(1, -79)
+sprite_frames = SubResource("SpriteFrames_1707p")
+
+[node name="PlayerAreaCollisionShape" type="CollisionShape2D" parent="."]
+z_index = 2
+z_as_relative = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_xhdff")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.470588)
+self_modulate = Color(1, 1, 1, 0.368627)
+position = Vector2(-3, -11)
+scale = Vector2(3.41309, 3.41309)
+texture = ExtResource("3_3mwre")
+
+[node name="Sonar" type="Area2D" parent="."]
+visible = false
+monitorable = false
+
+[node name="SonarCollider" type="CollisionShape2D" parent="Sonar"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_huovk")
+
+[node name="part_detection" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -12)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="part_detection"]
+shape = SubResource("CircleShape2D_1cpqf")
+
+[connection signal="area_entered" from="Sonar" to="." method="_on_sonar_area_entered"]
+[connection signal="area_exited" from="Sonar" to="." method="_on_sonar_area_exited"]
+[connection signal="area_entered" from="part_detection" to="." method="_on_part_detection_area_entered"]

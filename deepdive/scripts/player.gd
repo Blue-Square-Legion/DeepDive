@@ -6,7 +6,7 @@ var is_holding_part: bool = false
 signal set_part_texture(part: Area2D)
 signal set_drop_part
 
-var speed := 120.0
+var speed := 260.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
