@@ -29,5 +29,5 @@ func _on_resume_button_pressed() -> void:
 	pauseMenu()
 
 func _on_quit_button_pressed() -> void:
-	# TO FIX: Exiting then entering the game again starts the game paused
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

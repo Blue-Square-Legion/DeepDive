@@ -1,5 +1,8 @@
 extends Control
-
+var inCredits = false
+@onready var creditScreen = $creditBG
+@onready var mainMenuButtons = $mainMenuButtons
+@onready var optionsButtons = $optionsMenuButtons
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,3 +23,13 @@ func _on_options_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_credits_button_pressed() -> void:
+	if inCredits:
+		creditScreen.hide()
+		mainMenuButtons.show()
+	else:
+		creditScreen.show()
+		mainMenuButtons.hide()
+	inCredits = !inCredits

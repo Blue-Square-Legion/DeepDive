@@ -56,6 +56,50 @@ grow_vertical = 2
 [node name="HSlider" type="HSlider" parent="optionsMenuButtons"]
 layout_mode = 2
 
+[node name="creditBG" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 1155.0
+offset_bottom = 650.0
+color = Color(0.160784, 0.160784, 0.160784, 0.407843)
+metadata/_edit_group_ = true
+
+[node name="creditScreen" type="Label" parent="creditBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -178.5
+offset_right = 395.0
+offset_bottom = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thank you for playing Deep Dive!
+
+Producer: @Ahmad P, @Leonnorius Hyperion
+Game Design: @Gris
+2D Artists: @VyntInk, @Sunny
+3D Artists: @Victor Vinicius
+Programmers:  @polysplitter, @ClassicMushroom, @Breadnbuns
+UI Design: @Eman 
+Sound Design: @catbot
+
+"
+
+[node name="creditsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 572.0
+offset_right = 1129.0
+offset_bottom = 622.0
+text = "Credits"
+
 [connection signal="pressed" from="mainMenuButtons/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="mainMenuButtons/optionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="mainMenuButtons/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]
