@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nu0n77sdhsoc"
-path="res://.godot/imported/minecart.jpg-9ec081e2129b9c13b7fcd0ba659a7619.ctex"
+path="res://.godot/imported/minecart.jpg-24caf90483bacac84459d81301ccdc4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minecart.jpg"
-dest_files=["res://.godot/imported/minecart.jpg-9ec081e2129b9c13b7fcd0ba659a7619.ctex"]
+source_file="res://Assets/minecart.jpg"
+dest_files=["res://.godot/imported/minecart.jpg-24caf90483bacac84459d81301ccdc4e.ctex"]
 
 [params]
 
