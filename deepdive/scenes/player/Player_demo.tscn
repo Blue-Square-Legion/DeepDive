@@ -19,7 +19,7 @@ animations = [{
 radius = 28.5011
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1cpqf"]
-radius = 65.0692
+radius = 115.156
 
 [sub_resource type="Animation" id="Animation_8ijip"]
 length = 0.001
@@ -103,8 +103,8 @@ shape = SubResource("CircleShape2D_xhdff")
 visible = false
 modulate = Color(1, 1, 1, 0.470588)
 self_modulate = Color(1, 1, 1, 0.368627)
-position = Vector2(-3, -11)
-scale = Vector2(3.41309, 3.41309)
+position = Vector2(-5, -34)
+scale = Vector2(5.44873, 5.44873)
 texture = ExtResource("3_3mwre")
 
 [node name="Sonar" type="Area2D" parent="."]
@@ -115,7 +115,6 @@ monitorable = false
 polygon = PackedVector2Array(0, 112.5, 192, 0, 0, -112.5, -192, 0)
 
 [node name="part_detection" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, -12)
 monitorable = false
 

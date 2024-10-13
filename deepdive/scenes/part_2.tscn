@@ -12,14 +12,13 @@ shader_parameter/line_width = 10.0
 shader_parameter/outline_color = Vector4(0, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7x0u"]
-radius = 15.0
+radius = 72.0
 
 [node name="Part2" type="Area2D"]
 script = ExtResource("1_o82sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_g18ry")
-scale = Vector2(0.255859, 0.255859)
 texture = ExtResource("3_48d5n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
