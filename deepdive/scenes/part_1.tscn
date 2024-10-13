@@ -14,7 +14,7 @@ shader_parameter/outline_color = Vector4(1, 0, 0, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7x0u"]
 radius = 82.0975
 
-[node name="Part1" type="Area2D"]
+[node name="Part1" type="Area2D" groups=["part"]]
 script = ExtResource("1_ouhsy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
