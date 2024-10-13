@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq3uwo8dvhj8f"]
+[gd_scene load_steps=4 format=3 uid="uid://dx3iuluo2hom8"]
 
 [ext_resource type="Script" path="res://scripts/cart.gd" id="1_yf4bp"]
-[ext_resource type="Texture2D" uid="uid://nu0n77sdhsoc" path="res://minecart.jpg" id="2_irp6l"]
+[ext_resource type="Texture2D" uid="uid://nu0n77sdhsoc" path="res://Assets/minecart.jpg" id="2_irp6l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnxbt"]
-radius = 54.037
+radius = 374.192
 
 [node name="Cart" type="Area2D"]
 script = ExtResource("1_yf4bp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.19, 0.183333)
+scale = Vector2(1.038, 1)
 texture = ExtResource("2_irp6l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

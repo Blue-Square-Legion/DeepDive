@@ -82,7 +82,7 @@ _data = {
 "sonar_animation": SubResource("Animation_lwhbc")
 }
 
-[node name="HolyDiver" type="CharacterBody2D"]
+[node name="HolyDiver" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 floor_stop_on_slope = false
 floor_block_on_wall = false

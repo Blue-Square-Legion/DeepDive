@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgiwyup4j35bu"]
+[gd_scene load_steps=7 format=3 uid="uid://cgiwyup4j35bu"]
 
 [ext_resource type="PackedScene" uid="uid://doadv2ea1f8vu" path="res://scenes/demo_level.tscn" id="1_xydl3"]
 [ext_resource type="PackedScene" uid="uid://be0ku5iih3c24" path="res://scenes/player/Player_demo.tscn" id="2_2jbr1"]
 [ext_resource type="PackedScene" uid="uid://s4n7dq8pawxj" path="res://scenes/part_1.tscn" id="3_bxeas"]
 [ext_resource type="PackedScene" uid="uid://x6mp1lj2whnj" path="res://scenes/part_2.tscn" id="4_ijnf2"]
 [ext_resource type="PackedScene" uid="uid://behwijwoeq8m" path="res://scenes/ui.tscn" id="5_qe4u0"]
+[ext_resource type="PackedScene" uid="uid://dx3iuluo2hom8" path="res://scenes/cart.tscn" id="6_bedlu"]
 
 [node name="Main" type="Node"]
 
@@ -33,3 +34,6 @@ position = Vector2(469, 269)
 position = Vector2(1058, 343)
 
 [node name="InGameHud" parent="." instance=ExtResource("5_qe4u0")]
+
+[node name="Cart" parent="." instance=ExtResource("6_bedlu")]
+position = Vector2(576, -680)
