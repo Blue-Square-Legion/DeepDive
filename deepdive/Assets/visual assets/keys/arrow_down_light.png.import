@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bec37u0lwepf0"
-path="res://.godot/imported/Machine_01_128x128.png-7fc709fa70a1af0f042b92fa4f932387.ctex"
+uid="uid://bq01bpigxlbu"
+path="res://.godot/imported/arrow_down_light.png-c5b90bc093ff36ef9047917b1161fa38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Machine_01_128x128.png"
-dest_files=["res://.godot/imported/Machine_01_128x128.png-7fc709fa70a1af0f042b92fa4f932387.ctex"]
+source_file="res://Assets/visual assets/keys/arrow_down_light.png"
+dest_files=["res://.godot/imported/arrow_down_light.png-c5b90bc093ff36ef9047917b1161fa38.ctex"]
 
 [params]
 

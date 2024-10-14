@@ -1,15 +1,16 @@
 extends Area2D
 
-var can_be_picked: bool = false
-var canEnter = true
-var inRange = false
+@onready var machine_ui: CanvasLayer = %MachineUI
+
+var canEnter: bool = false
+var inRange: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	machine_ui.connect("machine_fixed", _on_machine_fixed)
 
-# TO DO
-# Add the trigger when all the parts have been repaired to let the player leave
+func _on_machine_fixed():
+	canEnter = true
 
 func _process(delta: float) -> void:
 	if inRange && canEnter:

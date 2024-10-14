@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://shaders/part_outline.gdshader" id="1_br4cf"]
 [ext_resource type="Script" path="res://scripts/part_1.gd" id="1_ouhsy"]
-[ext_resource type="Texture2D" uid="uid://bec37u0lwepf0" path="res://Assets/Machine_01_128x128.png" id="3_qr5r1"]
+[ext_resource type="Texture2D" uid="uid://bec37u0lwepf0" path="res://Assets/Part_2.png" id="3_qr5r1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5o80x"]
 shader = ExtResource("1_br4cf")
