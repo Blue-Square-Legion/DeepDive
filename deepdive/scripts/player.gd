@@ -2,7 +2,9 @@ class_name Player extends CharacterBody2D
 
 var picked_up_part: PackedScene = null
 var is_holding_part: bool = false
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var in_game_hud: CanvasLayer = %InGameHud
 
 
 signal set_part_texture(part: Area2D)
@@ -11,7 +13,7 @@ signal set_drop_part
 var speed := 300.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	in_game_hud.connect("clear_part_array", _on_clear_array)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,7 +29,10 @@ func _process(delta: float) -> void:
 		
 	handle_part_pickup()
 	
-
+func _on_clear_array():
+	active_parts.clear()
+	is_holding_part = false
+	
 ## HANDLE ITEM PICK UP ##
 func pick_up(part: Area2D):
 	picked_up_part = PackedScene.new()
@@ -48,9 +53,10 @@ func drop_part():
 var active_parts = []
 
 func _on_part_detection_area_entered(part: Area2D) -> void:
-	print("seen part " + part.name)
-	if part.can_be_picked == true && is_holding_part != true:
-		active_parts.push_back(part)
+	if part.is_in_group("part"):
+		print("seen part " + part.name)
+		if part.can_be_picked == true && is_holding_part != true:
+			active_parts.push_back(part)
 
 ### TODO there is a bug here come back later to find a better way to handle it.
 #func clean_part():

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dknmre30vy8l7"
-path="res://.godot/imported/part_test.png-3b3190d10be3b8600db3d6099ad1ba95.ctex"
+uid="uid://bq01bpigxlbu"
+path="res://.godot/imported/arrow_down_light.png-c5b90bc093ff36ef9047917b1161fa38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/part_test.png"
-dest_files=["res://.godot/imported/part_test.png-3b3190d10be3b8600db3d6099ad1ba95.ctex"]
+source_file="res://Assets/visual assets/keys/arrow_down_light.png"
+dest_files=["res://.godot/imported/arrow_down_light.png-c5b90bc093ff36ef9047917b1161fa38.ctex"]
 
 [params]
 
