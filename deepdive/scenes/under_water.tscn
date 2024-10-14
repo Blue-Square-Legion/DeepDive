@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3xuxgy2mcctr"]
+[gd_scene load_steps=10 format=3 uid="uid://b3xuxgy2mcctr"]
 
 [ext_resource type="Shader" path="res://shaders/under_water.gdshader" id="1_0b0cq"]
 [ext_resource type="Texture2D" uid="uid://d1icfbplsfxe0" path="res://icon.svg" id="1_1wwt0"]
+[ext_resource type="Shader" path="res://shaders/waterShader.gdshader" id="3_2mvo4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_f8nkk"]
 noise_type = 2
@@ -10,7 +11,7 @@ fractal_type = 2
 fractal_gain = -0.3
 fractal_weighted_strength = 0.75
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6fsj7"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gd73s"]
 seamless = true
 seamless_blend_skirt = 0.606
 noise = SubResource("FastNoiseLite_f8nkk")
@@ -20,12 +21,43 @@ shader = ExtResource("1_0b0cq")
 shader_parameter/color = Color(0, 0.803922, 1, 1)
 shader_parameter/speed = Vector2(-0.015, 0.001)
 shader_parameter/wave_strength = 2.0
-shader_parameter/fast_noise = SubResource("NoiseTexture2D_6fsj7")
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_gd73s")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l8xd3"]
+noise_type = 2
+frequency = 0.013
+fractal_type = 2
+fractal_gain = 0.98
+fractal_weighted_strength = 0.73
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ggawy"]
+seamless = true
+seamless_blend_skirt = 0.6
+noise = SubResource("FastNoiseLite_l8xd3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfxv6"]
+shader = ExtResource("3_2mvo4")
+shader_parameter/color = Color(0, 0.803922, 1, 1)
+shader_parameter/speed = Vector2(0.03, 0.07)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_ggawy")
 
 [node name="UnderWater" type="Node2D"]
 
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(610.232, 377.686)
+scale = Vector2(9.46512, 5.86429)
+texture = ExtResource("1_1wwt0")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ld848")
-position = Vector2(582.25, 324.25)
-scale = Vector2(9.37109, 5.44922)
+position = Vector2(600.625, 366.125)
+scale = Vector2(9.53711, 5.87305)
+texture = ExtResource("1_1wwt0")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_qfxv6")
+position = Vector2(604, 392)
+scale = Vector2(9.47656, 5.63281)
 texture = ExtResource("1_1wwt0")

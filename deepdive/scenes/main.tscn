@@ -1,10 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgiwyup4j35bu"]
+[gd_scene load_steps=11 format=3 uid="uid://cgiwyup4j35bu"]
 
 [ext_resource type="PackedScene" uid="uid://doadv2ea1f8vu" path="res://scenes/demo_level.tscn" id="1_xydl3"]
 [ext_resource type="PackedScene" uid="uid://be0ku5iih3c24" path="res://scenes/player/Player_demo.tscn" id="2_2jbr1"]
 [ext_resource type="PackedScene" uid="uid://s4n7dq8pawxj" path="res://scenes/part_1.tscn" id="3_bxeas"]
 [ext_resource type="PackedScene" uid="uid://x6mp1lj2whnj" path="res://scenes/part_2.tscn" id="4_ijnf2"]
 [ext_resource type="PackedScene" uid="uid://behwijwoeq8m" path="res://scenes/ui.tscn" id="5_qe4u0"]
+[ext_resource type="Shader" path="res://shaders/under_water.gdshader" id="6_nynsk"]
+[ext_resource type="Texture2D" uid="uid://d1icfbplsfxe0" path="res://icon.svg" id="7_7omms"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4fsg4"]
+noise_type = 2
+frequency = 0.03
+fractal_type = 2
+fractal_gain = -0.3
+fractal_weighted_strength = 0.75
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6fsj7"]
+seamless = true
+seamless_blend_skirt = 0.606
+noise = SubResource("FastNoiseLite_4fsg4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2jof"]
+shader = ExtResource("6_nynsk")
+shader_parameter/color = Color(0, 0.803922, 1, 1)
+shader_parameter/speed = Vector2(-0.015, 0.001)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_6fsj7")
 
 [node name="Main" type="Node"]
 
@@ -33,3 +54,9 @@ position = Vector2(469, 269)
 position = Vector2(1058, 343)
 
 [node name="InGameHud" parent="." instance=ExtResource("5_qe4u0")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_v2jof")
+position = Vector2(590, 565)
+scale = Vector2(33.0156, 21.4844)
+texture = ExtResource("7_7omms")
