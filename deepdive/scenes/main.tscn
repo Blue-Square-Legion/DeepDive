@@ -17,7 +17,7 @@ script = ExtResource("1_a0vp6")
 
 [node name="HolyDiver" parent="." instance=ExtResource("2_2jbr1")]
 unique_name_in_owner = true
-position = Vector2(790, 155)
+position = Vector2(592, -485)
 
 [node name="Camera2D" type="Camera2D" parent="HolyDiver"]
 position = Vector2(-3, -26)
