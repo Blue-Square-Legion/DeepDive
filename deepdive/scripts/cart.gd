@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var machine_ui: CanvasLayer = %MachineUI
+@onready var holy_diver: Player = %HolyDiver
 
 var canEnter: bool = false
 var inRange: bool = false
@@ -22,8 +23,12 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print_debug("player entered")
 		inRange = true
+		if canEnter:
+			holy_diver.update_label("Congrats!! Press Space!")
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print_debug("player left")
 		inRange = false
+		if canEnter:
+			holy_diver.update_label("")

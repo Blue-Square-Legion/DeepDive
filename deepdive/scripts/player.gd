@@ -2,10 +2,12 @@ class_name Player extends CharacterBody2D
 
 var picked_up_part: PackedScene = null
 var is_holding_part: bool = false
+var able_to_move: bool = true
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var in_game_hud: CanvasLayer = %InGameHud
-
+@onready var main: Node = $".."
+@onready var label: Label = %Label
 
 signal set_part_texture(part: Area2D)
 signal set_drop_part
@@ -14,6 +16,8 @@ var speed := 300.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	in_game_hud.connect("clear_part_array", _on_clear_array)
+	main.connect("on_machine_ui_open", _on_machine_ui_open)
+	main.connect("on_machine_ui_close", _on_machine_ui_close)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -22,17 +26,23 @@ func _process(delta: float) -> void:
 		velocity = direction * speed
 	else:
 		velocity = Vector2.ZERO
-	move_and_slide()
+	
+	if able_to_move:
+		move_and_slide()
 	
 	if Input.is_action_just_pressed("sonar"):
 		trigger_sonar()
-		
+	
 	handle_part_pickup()
 	
 func _on_clear_array():
 	active_parts.clear()
 	is_holding_part = false
 	
+## HANDLE THE LABEL TEXT ##
+func update_label(newText:String):
+	label.text = newText
+
 ## HANDLE ITEM PICK UP ##
 func pick_up(part: Area2D):
 	picked_up_part = PackedScene.new()
@@ -98,3 +108,9 @@ func _on_sonar_area_exited(area: Area2D) -> void:
 		var index = active_areas.find(area)
 		if index != -1:
 			active_areas.remove_at(index)
+
+func _on_machine_ui_close():
+	able_to_move = true
+	
+func _on_machine_ui_open():
+	able_to_move = false
