@@ -21,7 +21,7 @@ position = Vector2(790, 155)
 
 [node name="Camera2D" type="Camera2D" parent="HolyDiver"]
 position = Vector2(-3, -26)
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.4, 0.4)
 limit_top = -1360
 limit_bottom = 1960
 position_smoothing_enabled = true
