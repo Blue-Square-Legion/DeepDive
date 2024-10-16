@@ -25,6 +25,7 @@ signal machine_fixed()
 
 ## TODO create a way to get the part in the players inventory and match with what is required.
 var my_part:String = ""
+var machine_ui: bool = false
 
 ## TODO use _input to try to give feedback if the player hit the wrong button, and reset the progress.
 
@@ -36,6 +37,8 @@ func _ready() -> void:
 	
 	main.connect("has_part", _on_has_part)
 	main.connect("remove_part", _on_remove_part)
+	main.connect("on_machine_ui_open", _on_machine_ui_open)
+	main.connect("on_machine_ui_close", _on_machine_ui_close)
 
 func setup():
 	have_a_part_text.visible = false
@@ -66,18 +69,19 @@ func enable_puzzle() -> TextureRect:
 	return null
 
 func puzzle(part: TextureRect):
-	if part != null:
-		if !puzzleArray.is_empty():
-			## Add a timer to reset progress if player is too slow.
-			var item = puzzleArray[0]
-			if Input.is_action_just_pressed(item.name):
-				item.modulate = Color.GREEN
-				puzzleArray.erase(item)
-		else:
-			have_a_part_text.text = "Success!"
-			on_success.emit()
-			part.material.set_shader_parameter("toggle_silouette", false)
-			parts.erase(part)
+	if machine_ui == true:
+		if part != null:
+			if !puzzleArray.is_empty():
+				## Add a timer to reset progress if player is too slow.
+				var item = puzzleArray[0]
+				if Input.is_action_just_pressed(item.name):
+					item.modulate = Color.GREEN
+					puzzleArray.erase(item)
+			else:
+				have_a_part_text.text = "Success!"
+				on_success.emit()
+				part.material.set_shader_parameter("toggle_silouette", false)
+				parts.erase(part)
 			
 func _on_has_part(part: TextureRect):
 	## TODO need to get the correct part in a different way, if someone renames the file it will break this.
@@ -90,3 +94,9 @@ func _on_remove_part():
 func _on_close_pressed() -> void:
 	setup()
 	on_close.emit()
+	
+func _on_machine_ui_open():
+	machine_ui = true
+
+func _on_machine_ui_close():
+	machine_ui = false
