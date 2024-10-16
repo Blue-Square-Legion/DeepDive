@@ -66,6 +66,10 @@ func enable_puzzle() -> TextureRect:
 				have_a_part_text.text = "You have " + part.name + "! Enter the correct keys to install it!"
 				puzzle_control.visible = true
 				return part
+			else:
+				have_a_part_text.visible = false
+				have_a_part_text.text = ""
+				puzzle_control.visible = false
 	return null
 
 func puzzle(part: TextureRect):
