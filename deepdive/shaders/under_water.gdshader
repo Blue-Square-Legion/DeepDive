@@ -13,4 +13,3 @@ void fragment() {
 	COLOR = vec4(color.r, color.g, color.b, 0.1) + vec4(noise.x, noise.y, 1, 0.1);
 	COLOR *= texture(screen_content, SCREEN_UV + noise * (wave_strength / 100.0));
 }
-
