@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 var picked_up_part: PackedScene = null
 var is_holding_part: bool = false
 var able_to_move: bool = true
+var in_part_area: Area2D = null
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var in_game_hud: CanvasLayer = %InGameHud
@@ -36,7 +37,7 @@ func _process(delta: float) -> void:
 	handle_part_pickup()
 	
 func _on_clear_array():
-	active_parts.clear()
+	in_part_area = null
 	is_holding_part = false
 	
 ## HANDLE THE LABEL TEXT ##
@@ -57,36 +58,36 @@ func drop_part():
 		var new_sprite_instance = picked_up_part.instantiate()
 		new_sprite_instance.position = self.position
 		get_parent().add_child(new_sprite_instance)
+		new_sprite_instance.setup()
 		emit_signal("set_drop_part")
+		picked_up_part = null
 		is_holding_part = false
-
-var active_parts = []
 
 func _on_part_detection_area_entered(part: Area2D) -> void:
 	if part.is_in_group("part"):
+		in_part_area = part
 		print("seen part " + part.name)
-		if part.can_be_picked == true && is_holding_part != true:
-			active_parts.push_back(part)
 
-### TODO there is a bug here come back later to find a better way to handle it.
-#func clean_part():
-	#if active_parts.size() > 0:
-		#await get_tree().create_timer(0.2).timeout
-		#active_parts.remove_at(0)
+func _on_part_detection_area_exited(part: Area2D) -> void:
+	if part.is_in_group("part"):
+		in_part_area = null
+		print("left part")
+		part.left_part()
 		
 func handle_part_pickup():
 	if Input.is_action_just_pressed("part_interaction"):
-		if active_parts.size() > 0:
-			is_holding_part = true
-			for part in active_parts:
-				pick_up(part)
-				var index = active_parts.find(part)
-				if index != -1:
-					active_parts.remove_at(index)
-		elif is_holding_part == true:
-			drop_part()
 		
-	
+		if in_part_area == null && is_holding_part == true:
+			drop_part()
+			return
+		
+		if in_part_area != null:
+			if in_part_area.can_be_picked == false && is_holding_part != true:
+				return
+			pick_up(in_part_area)
+			is_holding_part = true
+
+		
 ## HANDLE SONAR ##
 var active_areas = []
 
@@ -105,9 +106,7 @@ func _on_sonar_area_entered(area: Area2D) -> void:
 
 func _on_sonar_area_exited(area: Area2D) -> void:
 	if area is Area2D:
-		var index = active_areas.find(area)
-		if index != -1:
-			active_areas.remove_at(index)
+		active_areas.erase(area)
 
 func _on_machine_ui_close():
 	able_to_move = true
