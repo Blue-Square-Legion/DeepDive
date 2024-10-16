@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 var picked_up_part: PackedScene = null
 var is_holding_part: bool = false
 var able_to_move: bool = true
+var in_part_area: Area2D = null
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var in_game_hud: CanvasLayer = %InGameHud
@@ -36,7 +37,7 @@ func _process(delta: float) -> void:
 	handle_part_pickup()
 	
 func _on_clear_array():
-	active_parts.clear()
+	in_part_area = null
 	is_holding_part = false
 	
 ## HANDLE THE LABEL TEXT ##
@@ -62,30 +63,30 @@ func drop_part():
 		picked_up_part = null
 		is_holding_part = false
 
-var active_parts = []
-
 func _on_part_detection_area_entered(part: Area2D) -> void:
 	if part.is_in_group("part"):
+		in_part_area = part
 		print("seen part " + part.name)
-		if part.can_be_picked == true && is_holding_part == false:
-			active_parts.push_back(part)
 
 func _on_part_detection_area_exited(part: Area2D) -> void:
 	if part.is_in_group("part"):
+		in_part_area = null
 		print("left part")
 		part.left_part()
 		
 func handle_part_pickup():
 	if Input.is_action_just_pressed("part_interaction"):
-		if active_parts.size() > 0:
-			for part in active_parts:
-				if part.can_be_picked == false:
-					continue
-				pick_up(part)
-				is_holding_part = true
-				active_parts.clear()
-		elif is_holding_part == true:
+		
+		if in_part_area == null && is_holding_part == true:
 			drop_part()
+			return
+		
+		if in_part_area != null:
+			if in_part_area.can_be_picked == false && is_holding_part != true:
+				return
+			pick_up(in_part_area)
+			is_holding_part = true
+
 		
 ## HANDLE SONAR ##
 var active_areas = []
