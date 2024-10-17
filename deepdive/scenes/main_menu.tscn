@@ -64,8 +64,8 @@ visible = false
 layout_mode = 0
 offset_left = 3.0
 offset_top = -3.0
-offset_right = 1905.0
-offset_bottom = 1076.0
+offset_right = 1281.0
+offset_bottom = 722.0
 color = Color(0.160784, 0.160784, 0.160784, 0.407843)
 metadata/_edit_group_ = true
 

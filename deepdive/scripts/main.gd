@@ -13,6 +13,7 @@ signal remove_part()
 signal on_machine_ui_open()
 signal on_machine_ui_close()
 
+
 func _ready() -> void:
 	machine_ui.visible = false
 	machine_ui.connect("on_close", _on_close_event)
