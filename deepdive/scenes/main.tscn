@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgiwyup4j35bu"]
+[gd_scene load_steps=11 format=3 uid="uid://cgiwyup4j35bu"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a0vp6"]
 [ext_resource type="PackedScene" uid="uid://dv2y0o4no1ikr" path="res://scenes/demo_level.tscn" id="1_xydl3"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://x6mp1lj2whnj" path="res://scenes/part_2.tscn" id="4_ijnf2"]
 [ext_resource type="PackedScene" uid="uid://behwijwoeq8m" path="res://scenes/ui.tscn" id="5_qe4u0"]
 [ext_resource type="PackedScene" uid="uid://dx3iuluo2hom8" path="res://scenes/cart.tscn" id="6_bedlu"]
-[ext_resource type="PackedScene" path="res://scenes/machine.tscn" id="7_mibne"]
-[ext_resource type="PackedScene" path="res://scenes/machineUI.tscn" id="9_yxrf0"]
+[ext_resource type="PackedScene" uid="uid://dh7xweru0u7bi" path="res://scenes/machine.tscn" id="7_mibne"]
+[ext_resource type="PackedScene" uid="uid://kndpabe2xhun" path="res://scenes/machineUI.tscn" id="9_yxrf0"]
+[ext_resource type="AudioStream" uid="uid://b02y3gfglah2w" path="res://audio/poly-song.ogg" id="10_r1smm"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_a0vp6")
@@ -17,7 +18,7 @@ script = ExtResource("1_a0vp6")
 
 [node name="HolyDiver" parent="." instance=ExtResource("2_2jbr1")]
 unique_name_in_owner = true
-position = Vector2(790, 155)
+position = Vector2(592, -485)
 
 [node name="Camera2D" type="Camera2D" parent="HolyDiver"]
 position = Vector2(-3, -26)
@@ -49,6 +50,11 @@ position = Vector2(-173, 883)
 [node name="MachineUI" parent="." groups=["machine"] instance=ExtResource("9_yxrf0")]
 unique_name_in_owner = true
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_r1smm")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Machine" to="." method="_on_machine_body_entered"]
 [connection signal="body_exited" from="Machine" to="." method="_on_machine_body_exited"]

@@ -177,3 +177,24 @@ tile_set = SubResource("TileSet_ns38x")
 [node name="coral_512" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAP//AAABAAEAAAADAAQAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_g0j12")
+[node name="Label" type="Label" parent="."]
+offset_left = -763.0
+offset_top = -1034.0
+offset_right = 145.0
+offset_bottom = -512.0
+theme_override_font_sizes/font_size = 56
+text = "Hey! Find the Parts that are buried in the sand! You need to Press E to use your Sonar radar. Then use SPACEBAR to pick up the Part."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -538.0
+offset_top = -482.0
+offset_right = -61.0
+offset_bottom = -208.0
+theme_override_font_sizes/font_size = 56
+text = "A W S D to move!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
