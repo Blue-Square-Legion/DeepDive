@@ -33,10 +33,10 @@ drag_top_margin = 0.1
 drag_right_margin = 0.15
 
 [node name="Part1" parent="." instance=ExtResource("3_bxeas")]
-position = Vector2(469, 269)
+position = Vector2(516, 30)
 
 [node name="Part2" parent="." instance=ExtResource("4_ijnf2")]
-position = Vector2(1058, 343)
+position = Vector2(1194, 758)
 
 [node name="InGameHud" parent="." instance=ExtResource("5_qe4u0")]
 unique_name_in_owner = true
