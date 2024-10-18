@@ -33,7 +33,7 @@ vertical_alignment = 1
 script = ExtResource("1_q1mft")
 
 [node name="GameTimer" type="Timer" parent="UI/Timer"]
-wait_time = 45.0
+wait_time = 60.0
 one_shot = true
 
 [node name="Label" type="Label" parent="UI"]
