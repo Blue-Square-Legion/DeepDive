@@ -36,6 +36,18 @@ script = ExtResource("1_q1mft")
 wait_time = 45.0
 one_shot = true
 
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 1
+offset_left = 944.0
+offset_top = 137.0
+offset_right = 1186.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 24
+text = "Move: W, A, S, D
+Sonar/Interact: E Key
+Pickup: SpaceBar"
+vertical_alignment = 1
+
 [node name="TextureRect" type="TextureRect" parent="UI"]
 unique_name_in_owner = true
 layout_mode = 1

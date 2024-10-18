@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if can_fix_machine == true:
 		if Input.is_action_just_pressed("sonar"):
 			on_machine_ui_open.emit()
-			machine_ui.visible = not machine_ui.visible
+			machine_ui.visible = true
 
 func _on_machine_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
