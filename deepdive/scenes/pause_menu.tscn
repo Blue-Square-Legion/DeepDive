@@ -26,16 +26,40 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.639216)
 
+[node name="Border" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -228.0
+offset_right = 181.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b5tek")
+region_rect = Rect2(2.59267, 2.26558, 91.3737, 90.9882)
+
+[node name="Label" type="Label" parent="Border"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 26.0
+offset_right = 256.0
+offset_bottom = 95.0
+text = "Paused"
+label_settings = SubResource("LabelSettings_6jgss")
+
 [node name="Pause Buttons" type="MarginContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
-offset_top = -106.0
-offset_right = 7.0
-offset_bottom = 30.0
+offset_left = -85.0
+offset_top = -107.0
+offset_right = -11.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -60,62 +84,6 @@ text = "Options"
 layout_mode = 2
 text = "Quit"
 
-[node name="Options" type="MarginContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -452.0
-offset_top = -118.0
-offset_right = -378.0
-offset_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-
-[node name="pauseButtons" type="VBoxContainer" parent="Options"]
-layout_mode = 2
-
-[node name="resumeButton" type="Button" parent="Options/pauseButtons"]
-layout_mode = 2
-text = "Resume"
-
-[node name="optionsButton" type="Button" parent="Options/pauseButtons"]
-layout_mode = 2
-text = "Options"
-
-[node name="quitButton" type="Button" parent="Options/pauseButtons"]
-layout_mode = 2
-text = "Quit"
-
-[node name="HSlider" type="HSlider" parent="Options/pauseButtons"]
-layout_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -228.0
-offset_right = 181.0
-offset_bottom = 223.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_b5tek")
-region_rect = Rect2(2.59267, 2.26558, 91.3737, 90.9882)
-
-[node name="Label" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 26.0
-offset_right = 256.0
-offset_bottom = 95.0
-text = "Paused"
-label_settings = SubResource("LabelSettings_6jgss")
-
 [node name="Controls text" type="Label" parent="."]
 visible = false
 offset_left = 492.0
@@ -138,6 +106,4 @@ text = "Back"
 [connection signal="pressed" from="Pause Buttons/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause Buttons/pauseButtons/controlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="Pause Buttons/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Options/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="Options/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Controls text/Back Button" to="." method="_on_back_button_pressed"]
