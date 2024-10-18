@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.639216)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Pause Buttons" type="MarginContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,23 +37,23 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="pauseButtons" type="VBoxContainer" parent="MarginContainer"]
+[node name="pauseButtons" type="VBoxContainer" parent="Pause Buttons"]
 layout_mode = 2
 
-[node name="resumeButton" type="Button" parent="MarginContainer/pauseButtons"]
+[node name="resumeButton" type="Button" parent="Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Resume"
 
-[node name="controlsButton" type="Button" parent="MarginContainer/pauseButtons"]
+[node name="controlsButton" type="Button" parent="Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Controls
 "
 
-[node name="optionsButton" type="Button" parent="MarginContainer/pauseButtons"]
+[node name="optionsButton" type="Button" parent="Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Options"
 
-[node name="quitButton" type="Button" parent="MarginContainer/pauseButtons"]
+[node name="quitButton" type="Button" parent="Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Quit"
 
@@ -74,5 +74,11 @@ offset_bottom = 95.0
 text = "Paused"
 label_settings = SubResource("LabelSettings_6jgss")
 
-[connection signal="pressed" from="MarginContainer/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
+[node name="Option Buttons" type="MarginContainer" parent="."]
+offset_left = 172.0
+offset_top = 183.0
+offset_right = 455.0
+offset_bottom = 442.0
+
+[connection signal="pressed" from="Pause Buttons/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause Buttons/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
