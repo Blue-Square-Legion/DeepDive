@@ -12,6 +12,9 @@ script = ExtResource("3_835q8")
 position = Vector2(640, 375)
 texture = ExtResource("2_e280t")
 
+[node name="Bubbles2" parent="Sprite2D" instance=ExtResource("4_muot5")]
+position = Vector2(49, -38)
+
 [node name="Label" type="Label" parent="."]
 offset_left = 531.0
 offset_top = 528.0
@@ -26,9 +29,6 @@ vertical_alignment = 1
 
 [node name="Bubbles" parent="." instance=ExtResource("4_muot5")]
 position = Vector2(228, 742)
-
-[node name="Bubbles2" parent="." instance=ExtResource("4_muot5")]
-position = Vector2(819, 753)
 
 [node name="Bubbles3" parent="." instance=ExtResource("4_muot5")]
 position = Vector2(1236, 759)

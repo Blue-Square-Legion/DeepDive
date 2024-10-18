@@ -35,6 +35,9 @@ drag_left_margin = 0.15
 drag_top_margin = 0.1
 drag_right_margin = 0.15
 
+[node name="Bubbles2" parent="HolyDiver" instance=ExtResource("12_wie6f")]
+position = Vector2(50, -96)
+
 [node name="Part1" parent="." instance=ExtResource("3_bxeas")]
 position = Vector2(516, 30)
 
@@ -68,9 +71,6 @@ visible = false
 
 [node name="Bubbles" parent="bubbles" instance=ExtResource("12_wie6f")]
 position = Vector2(642, 212)
-
-[node name="Bubbles2" parent="bubbles" instance=ExtResource("12_wie6f")]
-position = Vector2(-229, 1002)
 
 [node name="Bubbles3" parent="bubbles" instance=ExtResource("12_wie6f")]
 position = Vector2(1705, 782)
