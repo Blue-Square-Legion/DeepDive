@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ben23teslkrf8"]
+[gd_scene load_steps=5 format=3 uid="uid://ben23teslkrf8"]
 
 [ext_resource type="Texture2D" uid="uid://cllgv3mxplysy" path="res://placeholder.png" id="2_e280t"]
 [ext_resource type="PackedScene" uid="uid://b3xuxgy2mcctr" path="res://scenes/under_water.tscn" id="3_1nsfh"]
 [ext_resource type="Script" path="res://scripts/dialog_diver.gd" id="3_835q8"]
+[ext_resource type="PackedScene" uid="uid://cri4t4v7mpncl" path="res://scenes/bubbles.tscn" id="4_muot5"]
 
 [node name="LowerDiver" type="Node2D"]
 script = ExtResource("3_835q8")
@@ -22,3 +23,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UnderWater" parent="." instance=ExtResource("3_1nsfh")]
+
+[node name="Bubbles" parent="." instance=ExtResource("4_muot5")]
+position = Vector2(228, 742)
+
+[node name="Bubbles2" parent="." instance=ExtResource("4_muot5")]
+position = Vector2(819, 753)
+
+[node name="Bubbles3" parent="." instance=ExtResource("4_muot5")]
+position = Vector2(1236, 759)
