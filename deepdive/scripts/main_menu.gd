@@ -3,6 +3,7 @@ var inCredits = false
 @onready var creditScreen = $creditBG
 @onready var mainMenuButtons = $mainMenuButtons
 @onready var optionsButtons = $optionsMenuButtons
+@onready var demo_level: PackedScene = preload("res://scenes/lower_diver.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,10 @@ func _process(delta: float) -> void:
 
 # Handles main menu buttons
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	self.visible = false
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_packed(demo_level)
 
 func _on_options_button_pressed() -> void:
 	# TODO implement sound options and menu

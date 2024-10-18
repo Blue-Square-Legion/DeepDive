@@ -5,7 +5,7 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_f8nkk"]
 noise_type = 2
-frequency = 0.03
+frequency = 0.0184
 fractal_type = 2
 fractal_gain = -0.3
 fractal_weighted_strength = 0.75
@@ -17,15 +17,15 @@ noise = SubResource("FastNoiseLite_f8nkk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ld848"]
 shader = ExtResource("1_0b0cq")
-shader_parameter/color = Color(0, 0.803922, 1, 1)
-shader_parameter/speed = Vector2(-0.015, 0.001)
-shader_parameter/wave_strength = 2.0
+shader_parameter/color = Color(0, 0.561957, 0.887841, 1)
+shader_parameter/speed = Vector2(-0.05, 0.001)
+shader_parameter/wave_strength = 0.1
 shader_parameter/fast_noise = SubResource("NoiseTexture2D_6fsj7")
 
 [node name="UnderWater" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ld848")
-position = Vector2(582.25, 324.25)
-scale = Vector2(9.37109, 5.44922)
+position = Vector2(667, 381)
+scale = Vector2(28.6455, 17.6624)
 texture = ExtResource("1_1wwt0")

@@ -9,6 +9,7 @@ extends CanvasLayer
 
 @onready var puzzleArray: Array[TextureRect] = []
 
+@onready var machine: Area2D = %Machine
 @onready var have_a_part_text: Label = %HaveAPartText
 @onready var puzzle_control: HBoxContainer = %PuzzleControl
 
@@ -57,6 +58,7 @@ func _process(delta: float) -> void:
 	puzzle(enable_puzzle())
 	if parts.is_empty():
 		machine_fixed.emit()
+		machine.set_fixed_label()
 
 func enable_puzzle() -> TextureRect:
 	for part in parts:
