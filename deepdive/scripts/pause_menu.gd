@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var pause_menu = $"."
 @onready var pauseBG = $pauseBG

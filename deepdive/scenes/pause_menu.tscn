@@ -1,30 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkduc4e82sj1h"]
+[gd_scene load_steps=4 format=3 uid="uid://bkduc4e82sj1h"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_wm52j"]
+[ext_resource type="Texture2D" uid="uid://hqch64n4wcrp" path="res://panel-border-015.png" id="2_b5tek"]
 
-[node name="PauseMenu" type="Control"]
-layout_mode = 3
+[sub_resource type="LabelSettings" id="LabelSettings_6jgss"]
+font_size = 50
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_wm52j")
+
+[node name="pauseBG" type="ColorRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wm52j")
-
-[node name="pauseBG" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -579.0
-offset_top = -325.0
-offset_right = 579.0
-offset_bottom = 323.0
-color = Color(0.156863, 0.156863, 0.156863, 0.321569)
+color = Color(0.156863, 0.156863, 0.156863, 0.639216)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-offset_right = 70.0
-offset_bottom = 66.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 
 [node name="pauseButtons" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -33,9 +44,35 @@ layout_mode = 2
 layout_mode = 2
 text = "Resume"
 
+[node name="controlsButton" type="Button" parent="MarginContainer/pauseButtons"]
+layout_mode = 2
+text = "Controls
+"
+
+[node name="optionsButton" type="Button" parent="MarginContainer/pauseButtons"]
+layout_mode = 2
+text = "Options"
+
 [node name="quitButton" type="Button" parent="MarginContainer/pauseButtons"]
 layout_mode = 2
 text = "Quit"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 515.0
+offset_top = 180.0
+offset_right = 840.0
+offset_bottom = 631.0
+texture = ExtResource("2_b5tek")
+region_rect = Rect2(2.59267, 2.26558, 91.3737, 90.9882)
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 26.0
+offset_right = 256.0
+offset_bottom = 95.0
+text = "Paused"
+label_settings = SubResource("LabelSettings_6jgss")
 
 [connection signal="pressed" from="MarginContainer/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
