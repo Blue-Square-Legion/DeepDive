@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgiwyup4j35bu"]
+[gd_scene load_steps=13 format=3 uid="uid://cgiwyup4j35bu"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a0vp6"]
 [ext_resource type="PackedScene" uid="uid://dv2y0o4no1ikr" path="res://scenes/demo_level.tscn" id="1_xydl3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7xweru0u7bi" path="res://scenes/machine.tscn" id="7_mibne"]
 [ext_resource type="PackedScene" uid="uid://kndpabe2xhun" path="res://scenes/machineUI.tscn" id="9_yxrf0"]
 [ext_resource type="AudioStream" uid="uid://b02y3gfglah2w" path="res://audio/poly-song.ogg" id="10_r1smm"]
+[ext_resource type="PackedScene" uid="uid://cri4t4v7mpncl" path="res://scenes/bubbles.tscn" id="12_wie6f"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_a0vp6")
@@ -34,11 +35,14 @@ drag_left_margin = 0.15
 drag_top_margin = 0.1
 drag_right_margin = 0.15
 
+[node name="Bubbles2" parent="HolyDiver" instance=ExtResource("12_wie6f")]
+position = Vector2(50, -96)
+
 [node name="Part1" parent="." instance=ExtResource("3_bxeas")]
-position = Vector2(469, 269)
+position = Vector2(516, 30)
 
 [node name="Part2" parent="." instance=ExtResource("4_ijnf2")]
-position = Vector2(1058, 343)
+position = Vector2(1194, 758)
 
 [node name="InGameHud" parent="." instance=ExtResource("5_qe4u0")]
 unique_name_in_owner = true
@@ -47,6 +51,7 @@ unique_name_in_owner = true
 position = Vector2(576, -680)
 
 [node name="Machine" parent="." instance=ExtResource("7_mibne")]
+unique_name_in_owner = true
 position = Vector2(-173, 883)
 
 [node name="MachineUI" parent="." groups=["machine"] instance=ExtResource("9_yxrf0")]
@@ -54,12 +59,33 @@ unique_name_in_owner = true
 visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(642, 212)
 stream = ExtResource("10_r1smm")
 autoplay = true
 parameters/looping = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_3qoc6")]
 visible = false
+
+[node name="bubbles" type="Node" parent="."]
+
+[node name="Bubbles" parent="bubbles" instance=ExtResource("12_wie6f")]
+position = Vector2(642, 212)
+
+[node name="Bubbles3" parent="bubbles" instance=ExtResource("12_wie6f")]
+position = Vector2(1705, 782)
+
+[node name="Bubbles4" parent="bubbles" instance=ExtResource("12_wie6f")]
+position = Vector2(-555, -184)
+
+[node name="Bubbles5" parent="bubbles" instance=ExtResource("12_wie6f")]
+position = Vector2(-79, -402)
+
+[node name="Bubbles6" parent="bubbles" instance=ExtResource("12_wie6f")]
+position = Vector2(393, 1088)
+
+[node name="Bubbles7" parent="bubbles" instance=ExtResource("12_wie6f")]
+position = Vector2(2183, 61)
 
 [connection signal="body_entered" from="Machine" to="." method="_on_machine_body_entered"]
 [connection signal="body_exited" from="Machine" to="." method="_on_machine_body_exited"]

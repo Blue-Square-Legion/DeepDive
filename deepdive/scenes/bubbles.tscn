@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cri4t4v7mpncl"]
+
+[ext_resource type="Texture2D" uid="uid://bqqsdwaxpkbdh" path="res://Assets/bubble.png" id="1_fs7mg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bjhma"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_koxys"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_b8shf"]
+curve = SubResource("Curve_koxys")
+
+[sub_resource type="Curve" id="Curve_3r31f"]
+_data = [Vector2(0, 0.294517), 0.0, 0.0, 0, 0, Vector2(0.877483, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2i7ku"]
+curve = SubResource("Curve_3r31f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rlgmu"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(3, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, -64, 0)
+damping_max = 34.946
+scale_min = 0.8
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_2i7ku")
+hue_variation_curve = SubResource("CurveTexture_b8shf")
+
+[node name="Bubbles" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 5
+material = SubResource("CanvasItemMaterial_bjhma")
+scale = Vector2(10, 10)
+process_material = SubResource("ParticleProcessMaterial_rlgmu")
+texture = ExtResource("1_fs7mg")
+lifetime = 6.0
+preprocess = 6.0
+randomness = 0.2

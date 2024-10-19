@@ -15,7 +15,9 @@ func _on_machine_fixed():
 
 func _process(delta: float) -> void:
 	if inRange && canEnter:
-		if Input.is_action_just_pressed("part_interaction"):
+		if Input.is_action_just_pressed("sonar"):
+			TransitionScreen.transition()
+			await TransitionScreen.on_transition_finished
 			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 # Detects if the player has entered or range of the cart
@@ -24,7 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print_debug("player entered")
 		inRange = true
 		if canEnter:
-			holy_diver.update_label("Congrats!! Press Space!")
+			holy_diver.update_label("Congrats!! Press E to continue!")
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
