@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ben23teslkrf8"]
 
-[ext_resource type="Texture2D" uid="uid://cllgv3mxplysy" path="res://placeholder.png" id="2_e280t"]
+[ext_resource type="Texture2D" uid="uid://dx2kqu018m5ku" path="res://Assets/player/sprite_player.png" id="2_m62ni"]
 [ext_resource type="PackedScene" uid="uid://b3xuxgy2mcctr" path="res://scenes/under_water.tscn" id="3_1nsfh"]
 [ext_resource type="Script" path="res://scripts/dialog_diver.gd" id="3_835q8"]
 [ext_resource type="PackedScene" uid="uid://cri4t4v7mpncl" path="res://scenes/bubbles.tscn" id="4_muot5"]
@@ -10,7 +10,8 @@ script = ExtResource("3_835q8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(640, 375)
-texture = ExtResource("2_e280t")
+texture = ExtResource("2_m62ni")
+hframes = 6
 
 [node name="Bubbles2" parent="Sprite2D" instance=ExtResource("4_muot5")]
 position = Vector2(49, -38)
