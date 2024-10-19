@@ -1,0 +1,27 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=5 format=3 uid="uid://dnhagpob5bumd"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_df2oo"]
+animation = &"walking nortwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tlisb"]
+animation = &"walking southwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kj03a"]
+animation = &"walking norteast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e4ehk"]
+animation = &"walking southeast"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_df2oo")
+blend_point_0/pos = Vector2(-1, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_tlisb")
+blend_point_1/pos = Vector2(-1, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_kj03a")
+blend_point_2/pos = Vector2(1, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_e4ehk")
+blend_point_3/pos = Vector2(1, 1)
+min_space = Vector2(-2, -2)
+max_space = Vector2(2, 2)
+snap = Vector2(0.5, 0.5)
+blend_mode = 1
