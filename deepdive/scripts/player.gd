@@ -46,6 +46,8 @@ func update_label(newText:String):
 
 ## HANDLE ITEM PICK UP ##
 func pick_up(part: Area2D):
+	if is_holding_part:
+		return
 	picked_up_part = PackedScene.new()
 	picked_up_part.pack(part)
 	emit_signal("set_part_texture", part)
