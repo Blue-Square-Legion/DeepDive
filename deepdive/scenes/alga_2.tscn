@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://16x4nnv21r5u"]
+
+[ext_resource type="Shader" path="res://shaders/alga.gdshader" id="1_n3v7t"]
+[ext_resource type="Texture2D" uid="uid://co3w1rchyfkse" path="res://Assets/alga2-512.png" id="2_fxg2y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chfhu"]
+shader = ExtResource("1_n3v7t")
+
+[node name="alga_2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_chfhu")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fxg2y")
