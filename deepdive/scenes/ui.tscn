@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://behwijwoeq8m"]
+[gd_scene load_steps=4 format=3 uid="uid://behwijwoeq8m"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_as0kd"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="1_q1mft"]
-[ext_resource type="PackedScene" uid="uid://b3xuxgy2mcctr" path="res://scenes/under_water.tscn" id="3_ni8it"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1j5l7"]
 font_size = 48
@@ -56,5 +55,3 @@ offset_left = 48.0
 offset_top = 31.0
 offset_right = 233.0
 offset_bottom = 216.0
-
-[node name="UnderWater" parent="." instance=ExtResource("3_ni8it")]

@@ -129,6 +129,7 @@ offset_right = 291.0
 offset_bottom = 104.0
 
 [node name="op Back Button" type="Button" parent="Options"]
+layout_mode = 0
 offset_left = 287.0
 offset_top = 374.0
 offset_right = 424.0
@@ -136,6 +137,7 @@ offset_bottom = 421.0
 text = "Back"
 
 [node name="Music Slider" type="HSlider" parent="Options"]
+layout_mode = 0
 offset_left = 235.0
 offset_top = 184.0
 offset_right = 533.0
@@ -143,7 +145,7 @@ offset_bottom = 225.0
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_wfutx")
-bus_name = "Music"
+bus_name = "Master"
 
 [node name="Options Border" type="NinePatchRect" parent="Options"]
 layout_mode = 1
