@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkduc4e82sj1h"]
+[gd_scene load_steps=7 format=3 uid="uid://bkduc4e82sj1h"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_wm52j"]
 [ext_resource type="Texture2D" uid="uid://hqch64n4wcrp" path="res://panel-border-015.png" id="2_b5tek"]
+[ext_resource type="Script" path="res://scenes/music_slider.gd" id="3_wfutx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6jgss"]
 font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_fqqjf"]
 font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_86kkn"]
+font_size = 35
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_wm52j")
@@ -26,22 +30,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.639216)
 
-[node name="Border" type="NinePatchRect" parent="."]
+[node name="Pause" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Border" type="NinePatchRect" parent="Pause"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -228.0
-offset_right = 181.0
-offset_bottom = 223.0
+offset_left = 435.0
+offset_top = 112.0
+offset_right = 801.0
+offset_bottom = 563.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_b5tek")
 region_rect = Rect2(2.59267, 2.26558, 91.3737, 90.9882)
 
-[node name="Label" type="Label" parent="Border"]
+[node name="Label" type="Label" parent="Pause/Border"]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 26.0
@@ -50,37 +61,38 @@ offset_bottom = 95.0
 text = "Paused"
 label_settings = SubResource("LabelSettings_6jgss")
 
-[node name="Pause Buttons" type="MarginContainer" parent="."]
+[node name="Pause Buttons" type="MarginContainer" parent="Pause"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -107.0
-offset_right = -11.0
-offset_bottom = 29.0
+offset_left = 535.0
+offset_top = 233.0
+offset_right = 609.0
+offset_bottom = 369.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="pauseButtons" type="VBoxContainer" parent="Pause Buttons"]
+[node name="pauseButtons" type="VBoxContainer" parent="Pause/Pause Buttons"]
 layout_mode = 2
 
-[node name="resumeButton" type="Button" parent="Pause Buttons/pauseButtons"]
+[node name="resumeButton" type="Button" parent="Pause/Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Resume"
 
-[node name="controlsButton" type="Button" parent="Pause Buttons/pauseButtons"]
+[node name="controlsButton" type="Button" parent="Pause/Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Controls
 "
 
-[node name="optionsButton" type="Button" parent="Pause Buttons/pauseButtons"]
+[node name="optionsButton" type="Button" parent="Pause/Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Options"
 
-[node name="quitButton" type="Button" parent="Pause Buttons/pauseButtons"]
+[node name="quitButton" type="Button" parent="Pause/Pause Buttons/pauseButtons"]
 layout_mode = 2
 text = "Quit"
 
@@ -103,7 +115,75 @@ offset_right = 193.0
 offset_bottom = 228.0
 text = "Back"
 
-[connection signal="pressed" from="Pause Buttons/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="Pause Buttons/pauseButtons/controlsButton" to="." method="_on_controls_button_pressed"]
-[connection signal="pressed" from="Pause Buttons/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 291.0
+offset_top = 104.0
+offset_right = 291.0
+offset_bottom = 104.0
+
+[node name="op Back Button" type="Button" parent="Options"]
+offset_left = 287.0
+offset_top = 374.0
+offset_right = 424.0
+offset_bottom = 421.0
+text = "Back"
+
+[node name="Music Slider" type="HSlider" parent="Options"]
+offset_left = 235.0
+offset_top = 184.0
+offset_right = 533.0
+offset_bottom = 225.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_wfutx")
+bus_name = "Music"
+
+[node name="Options Border" type="NinePatchRect" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = 27.0
+offset_right = 617.0
+offset_bottom = 478.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b5tek")
+region_rect = Rect2(2.59267, 2.26558, 91.3737, 90.9882)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Options/Options Border"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 30.0
+offset_right = 379.0
+offset_bottom = 99.0
+text = "Options"
+label_settings = SubResource("LabelSettings_6jgss")
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 177.0
+offset_right = 210.0
+offset_bottom = 237.0
+text = "Music
+"
+label_settings = SubResource("LabelSettings_86kkn")
+
+[connection signal="pressed" from="Pause/Pause Buttons/pauseButtons/resumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause/Pause Buttons/pauseButtons/controlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="Pause/Pause Buttons/pauseButtons/optionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Pause/Pause Buttons/pauseButtons/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Controls text/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Options/op Back Button" to="." method="_on_op_back_button_pressed"]
