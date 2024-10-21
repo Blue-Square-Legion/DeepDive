@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyqqojei1kocr"]
+
+[ext_resource type="Script" path="res://scripts/lose_screen.gd" id="1_juc1e"]
+[ext_resource type="Texture2D" uid="uid://hqch64n4wcrp" path="res://panel-border-015.png" id="1_sod1d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrr4p"]
+font_size = 50
+
+[node name="LoseScreen" type="CanvasLayer"]
+script = ExtResource("1_juc1e")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.639216)
+
+[node name="Border" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = -211.0
+offset_right = 297.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sod1d")
+region_rect = Rect2(2.59267, 2.26558, 91.3737, 90.9882)
+
+[node name="Label" type="Label" parent="Border"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 34.0
+offset_right = 488.0
+offset_bottom = 103.0
+text = "Mission Failed..."
+label_settings = SubResource("LabelSettings_jrr4p")
+
+[node name="Retry Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 16.0
+offset_right = 84.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Retry"
+
+[node name="Quit Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 92.0
+offset_right = 84.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="pressed" from="Retry Button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
