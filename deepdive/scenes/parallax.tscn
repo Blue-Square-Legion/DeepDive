@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://chk1nlswvo026"]
+
+[ext_resource type="Texture2D" uid="uid://ct2tgfly7xhe" path="res://Assets/visual assets/background/layer 0.png" id="1_xvorq"]
+[ext_resource type="Texture2D" uid="uid://du0gn0r0xvssr" path="res://Assets/visual assets/background/layer 1.png" id="2_kh8to"]
+[ext_resource type="Texture2D" uid="uid://bg2jmnqn6kv3o" path="res://Assets/visual assets/background/layer 2.png" id="3_wiqyv"]
+
+[node name="parallax" type="Node2D"]
+position = Vector2(635, -140)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="water" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(635, -140)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/water"]
+position = Vector2(723, 673)
+texture = ExtResource("1_xvorq")
+
+[node name="sand" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(635, -140)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sand"]
+position = Vector2(723, 676)
+texture = ExtResource("2_kh8to")
+
+[node name="shadow" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(635, -140)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/shadow"]
+position = Vector2(723, 673)
+texture = ExtResource("3_wiqyv")

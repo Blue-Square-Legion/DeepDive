@@ -332,7 +332,6 @@ _data = {
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_csesg"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_q22il"]
-graph_offset = Vector2(-509.065, 84.4471)
 nodes/AnimationNodeStateMachine/node = ExtResource("6_rskb1")
 nodes/AnimationNodeStateMachine/position = Vector2(-140, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_csesg")

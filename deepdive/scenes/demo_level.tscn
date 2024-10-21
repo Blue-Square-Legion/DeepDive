@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dv2y0o4no1ikr"]
+[gd_scene load_steps=10 format=4 uid="uid://dv2y0o4no1ikr"]
 
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_v0ry1"]
+[ext_resource type="PackedScene" uid="uid://chk1nlswvo026" path="res://scenes/parallax.tscn" id="2_1jkfi"]
 [ext_resource type="TileSet" uid="uid://lwihse8x6482" path="res://Assets/visual assets/tiles/tileset_0.tres" id="2_ffcg4"]
 [ext_resource type="Texture2D" uid="uid://cvnqxjpotsxvo" path="res://Assets/visual assets/tiles/coral_128.png" id="3_1efl6"]
 [ext_resource type="Texture2D" uid="uid://dq8w60ehfimp8" path="res://Assets/visual assets/tiles/coral_512.png" id="4_vxmyf"]
@@ -154,6 +155,8 @@ sources/0 = SubResource("TileSetAtlasSource_knmva")
 
 [node name="DemoLevel" type="Node2D"]
 script = ExtResource("1_v0ry1")
+
+[node name="parallax" parent="." instance=ExtResource("2_1jkfi")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
