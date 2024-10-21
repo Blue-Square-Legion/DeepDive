@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("sonar"):
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
-			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+			#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+			get_tree().change_scene_to_file("res://scenes/win screen.tscn")
 
 # Detects if the player has entered or range of the cart
 func _on_body_entered(body: Node2D) -> void:
