@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ben23teslkrf8"]
+[gd_scene load_steps=6 format=3 uid="uid://ben23teslkrf8"]
 
+[ext_resource type="Texture2D" uid="uid://bvp8ywnkifyb8" path="res://Assets/bg.png" id="2_kb4ot"]
 [ext_resource type="Texture2D" uid="uid://dx2kqu018m5ku" path="res://Assets/player/sprite_player.png" id="2_m62ni"]
 [ext_resource type="PackedScene" uid="uid://b3xuxgy2mcctr" path="res://scenes/under_water.tscn" id="3_1nsfh"]
 [ext_resource type="Script" path="res://scripts/dialog_diver.gd" id="3_835q8"]
@@ -7,6 +8,14 @@
 
 [node name="LowerDiver" type="Node2D"]
 script = ExtResource("3_835q8")
+
+[node name="bg" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 1308.0
+offset_bottom = 759.0
+texture = ExtResource("2_kb4ot")
+expand_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(640, 375)
