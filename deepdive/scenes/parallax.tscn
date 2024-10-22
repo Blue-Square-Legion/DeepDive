@@ -15,14 +15,16 @@ motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/water"]
 position = Vector2(723, 673)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_xvorq")
 
 [node name="sand" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(635, -140)
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sand"]
 position = Vector2(723, 676)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_kh8to")
 
 [node name="shadow" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -31,4 +33,5 @@ motion_scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/shadow"]
 position = Vector2(723, 673)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("3_wiqyv")
