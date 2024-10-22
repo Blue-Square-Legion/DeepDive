@@ -96,61 +96,24 @@ position = Vector2(2183, 61)
 
 [node name="seaweed" type="Node" parent="."]
 
-[node name="alga_1" parent="seaweed" instance=ExtResource("13_bwpim")]
-z_index = 1
-position = Vector2(947, 56)
-
 [node name="alga_14" parent="seaweed" instance=ExtResource("13_bwpim")]
 z_index = 1
-position = Vector2(2233, -61)
+position = Vector2(2262, -30)
 
 [node name="alga_11" parent="seaweed" instance=ExtResource("13_bwpim")]
 z_index = 1
-position = Vector2(1636, 265)
+position = Vector2(1648, 241)
 
 [node name="alga_10" parent="seaweed" instance=ExtResource("13_bwpim")]
 z_index = 1
-position = Vector2(-51, -366)
-
-[node name="alga_9" parent="seaweed" instance=ExtResource("13_bwpim")]
-z_index = 1
-position = Vector2(507, 1027)
+position = Vector2(-109, -390)
 
 [node name="alga_4" parent="seaweed" instance=ExtResource("13_bwpim")]
 z_index = 1
-position = Vector2(-231, 270)
+position = Vector2(-327, 335)
 
-[node name="alga_13" parent="seaweed" instance=ExtResource("13_bwpim")]
-z_index = 1
-position = Vector2(226, 1554)
-
-[node name="alga_2" parent="seaweed" instance=ExtResource("13_bwpim")]
-z_index = 1
-position = Vector2(1166, -11)
-
-[node name="alga_5" parent="seaweed" instance=ExtResource("13_bwpim")]
-z_index = 1
-position = Vector2(-335, 250)
-
-[node name="alga_3" parent="seaweed" instance=ExtResource("14_tpia2")]
-z_index = 1
-position = Vector2(1077, 39)
-
-[node name="alga_8" parent="seaweed" instance=ExtResource("14_tpia2")]
-z_index = 1
-position = Vector2(587, 949)
-
-[node name="alga_6" parent="seaweed" instance=ExtResource("14_tpia2")]
-z_index = 1
-position = Vector2(-356, 295)
-
-[node name="alga_7" parent="seaweed" instance=ExtResource("14_tpia2")]
-z_index = 1
-position = Vector2(413, 1070)
-
-[node name="alga_12" parent="seaweed" instance=ExtResource("14_tpia2")]
-z_index = 1
-position = Vector2(1793, 795)
+[node name="alga_2" parent="seaweed" instance=ExtResource("14_tpia2")]
+position = Vector2(430, 945)
 
 [node name="UnderWater" parent="." instance=ExtResource("13_v4dfw")]
 
