@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bllhlklvkm0rq"]
+[gd_scene load_steps=3 format=3 uid="uid://bllhlklvkm0rq"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_mided"]
+[ext_resource type="Texture2D" uid="uid://bvp8ywnkifyb8" path="res://Assets/bg.png" id="2_xhmxe"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mided")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 1308.0
+offset_bottom = 759.0
+texture = ExtResource("2_xhmxe")
+expand_mode = 2
 
 [node name="mainMenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
