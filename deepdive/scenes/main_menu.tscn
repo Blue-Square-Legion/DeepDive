@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bllhlklvkm0rq"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_mided"]
-[ext_resource type="Texture2D" uid="uid://bvp8ywnkifyb8" path="res://Assets/bg.png" id="2_xhmxe"]
+[ext_resource type="Texture2D" uid="uid://byccisxq27ts2" path="res://Assets/cover.jpg" id="2_wap3h"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,7 +18,7 @@ offset_left = -32.0
 offset_top = -32.0
 offset_right = 1308.0
 offset_bottom = 759.0
-texture = ExtResource("2_xhmxe")
+texture = ExtResource("2_wap3h")
 expand_mode = 2
 
 [node name="mainMenuButtons" type="VBoxContainer" parent="."]
