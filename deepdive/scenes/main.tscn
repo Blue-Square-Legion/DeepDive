@@ -21,7 +21,8 @@ script = ExtResource("1_a0vp6")
 
 [node name="HolyDiver" parent="." instance=ExtResource("2_2jbr1")]
 unique_name_in_owner = true
-position = Vector2(592, -485)
+y_sort_enabled = false
+position = Vector2(499, -561)
 
 [node name="Camera2D" type="Camera2D" parent="HolyDiver"]
 visible = false
@@ -40,21 +41,21 @@ drag_right_margin = 0.15
 position = Vector2(50, -96)
 
 [node name="Part1" parent="." instance=ExtResource("3_bxeas")]
-position = Vector2(516, 30)
+position = Vector2(-515, 1644)
 
 [node name="Part2" parent="." instance=ExtResource("4_ijnf2")]
-position = Vector2(1194, 758)
+position = Vector2(2765, 667)
 
 [node name="InGameHud" parent="." instance=ExtResource("5_qe4u0")]
 unique_name_in_owner = true
 
 [node name="Cart" parent="." instance=ExtResource("6_bedlu")]
 unique_name_in_owner = true
-position = Vector2(576, -680)
+position = Vector2(105, -935)
 
 [node name="Machine" parent="." instance=ExtResource("7_mibne")]
 unique_name_in_owner = true
-position = Vector2(-173, 883)
+position = Vector2(382, -225)
 
 [node name="MachineUI" parent="." groups=["machine"] instance=ExtResource("9_yxrf0")]
 unique_name_in_owner = true

@@ -1,17 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dx3iuluo2hom8"]
 
 [ext_resource type="Script" path="res://scripts/cart.gd" id="1_yf4bp"]
-[ext_resource type="Texture2D" uid="uid://nu0n77sdhsoc" path="res://Assets/minecart.jpg" id="2_irp6l"]
+[ext_resource type="Texture2D" uid="uid://d03bvlcueqs0v" path="res://Assets/visual assets/Cage_512_px.png" id="2_hdwle"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnxbt"]
 radius = 374.192
 
 [node name="Cart" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_yf4bp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(1.038, 1)
-texture = ExtResource("2_irp6l")
+texture = ExtResource("2_hdwle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -5)

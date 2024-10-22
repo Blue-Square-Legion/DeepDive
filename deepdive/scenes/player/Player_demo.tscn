@@ -340,6 +340,7 @@ node_connections = [&"TimeScale", 0, &"AnimationNodeStateMachine", &"output", 0,
 
 [node name="HolyDiver" type="CharacterBody2D" groups=["player"]]
 z_index = 1
+y_sort_enabled = true
 floor_stop_on_slope = false
 floor_block_on_wall = false
 script = ExtResource("1_13w51")

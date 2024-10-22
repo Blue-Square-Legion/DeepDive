@@ -28,6 +28,6 @@ shader_parameter/fast_noise = SubResource("NoiseTexture2D_6fsj7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ld848")
-position = Vector2(606, 343)
-scale = Vector2(59.2526, 36.5343)
+position = Vector2(1638.92, 343)
+scale = Vector2(75.3919, 36.5343)
 texture = ExtResource("1_1wwt0")

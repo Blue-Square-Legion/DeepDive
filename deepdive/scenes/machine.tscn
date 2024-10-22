@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh7xweru0u7bi"]
 
-[ext_resource type="Texture2D" uid="uid://c6vfpw04fiexd" path="res://Assets/visual assets/Machine.png" id="1_lpqrn"]
 [ext_resource type="Script" path="res://scripts/machineRepair.gd" id="1_ysf82"]
+[ext_resource type="Texture2D" uid="uid://vw26vsj4osu8" path="res://Assets/visual assets/machine_repair.png" id="2_qmfr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jx70"]
 size = Vector2(433.25, 439)
@@ -10,11 +10,10 @@ size = Vector2(433.25, 439)
 script = ExtResource("1_ysf82")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("1_lpqrn")
+texture = ExtResource("2_qmfr8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6.625, 2.5)
+position = Vector2(-6.625, 49)
 shape = SubResource("RectangleShape2D_5jx70")
 
 [node name="Label" type="Label" parent="."]
