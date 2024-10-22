@@ -15,13 +15,13 @@ func _process(delta: float) -> void:
 
 # Handles pause menu
 func pauseMenu():
-	if paused:
-		print_debug("Paused")
+	if paused:	
+		print_debug("unpaused")
 		pause_menu.hide()
 		pauseBG.hide()
 		Engine.time_scale = 1
 	else:
-		print_debug("unpaused")
+		print_debug("paused")
 		pause_menu.show()
 		pauseBG.show()
 		Engine.time_scale = 0
